@@ -33,8 +33,6 @@ module Quickblox
           udid:             options.fetch('udid', nil),
         }
       )
-
-      parameters
     end
 
     private
