@@ -9,7 +9,6 @@ module Quickblox
         ::Quickblox.config = config_for(:quickblox)
       end
 
-
       def test_registering_new_user
         response = Register.user({
           'login'     => 'devise@rubyonrails.com',

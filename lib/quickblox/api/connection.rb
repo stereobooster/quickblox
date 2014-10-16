@@ -26,11 +26,15 @@ module Quickblox
       def post(url, data, &block)
         @token = self.session.token
 
-        connect.post do |request|
+        res = connect.post do |request|
           request.url url
           request.headers['QB-Token'] = @token
           request.body = normalize(data)
         end
+
+        $stderr.puts "\n\n#{url} Options: #{normalize(data)}\n\nResponse: #{res.inspect}\n\n"
+
+        res
       end
 
 
