@@ -6,7 +6,7 @@ module Quickblox
 
       initializer "quickblox.setup", group: :all do |app|
         ::Quickblox.config = app.config_for(:quickblox)
-        ::Quickblox.logger = app.logger
+        # ::Quickblox.logger = app.logger
       end
 
     end
