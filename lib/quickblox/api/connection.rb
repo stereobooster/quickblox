@@ -1,3 +1,4 @@
+require 'json'
 
 module Quickblox
   module Api
@@ -32,9 +33,7 @@ module Quickblox
           request.body = normalize(data)
         end
 
-        $stderr.puts "\n\n#{url} Options: #{normalize(data)}\n\nResponse: #{res.inspect}\n\n"
-
-        res
+        parse(res)
       end
 
 
@@ -55,8 +54,8 @@ module Quickblox
         end
 
         if response.success?
-          sess = parse_response(response.body, 'session')
-          @session = ::Quickblox::Api::Session.new(sess) unless sess.empty?
+          sess      = ::JSON.parse(response.body).fetch('session', [])
+          @session  = ::Quickblox::Api::Session.new(sess) unless sess.empty?
         end
 
         self
@@ -77,8 +76,11 @@ module Quickblox
 
       private
 
-      def parse_response(response_body, endpoint)
-        ::JSON.parse(response_body).fetch(endpoint, [])
+
+      def parse(response)
+        hash = ::JSON.parse(response.body)
+        hash.merge!('status'  => response.status,
+                    'success' => response.success?)
       end
 
     end

@@ -17,7 +17,10 @@ module Quickblox
           'udid'      => '1234abc',
         })
 
-        assert response
+        assert_equal 422, response['status']
+        refute response['success']
+
+        # assert_equal '', response
       end
 
     end
@@ -35,3 +38,6 @@ end
 # {"errors"=>{"password"=>["is too short (minimum is 8 characters)"]}}
 # {"errors"=>{"password"=>["is too short (minimum is 8 characters)"], "base"=>["Login or email required"]}}
 #
+# { "errors"    => {"login"=>["has already been taken"]},
+#   "status"    => 422,
+#   "success"   => false }

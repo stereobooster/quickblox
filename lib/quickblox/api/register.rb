@@ -25,13 +25,11 @@ module Quickblox
   module Api
     module Register
       extend self
-      extend ResponseHelper
 
       def user(options)
         connection  = Connection.open_session
         response    = connection.post('/users.json', options)
         connection.close_session
-        # parse(response, type: 'register')
         response
       end
 

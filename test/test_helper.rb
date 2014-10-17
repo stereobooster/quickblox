@@ -9,7 +9,7 @@ module Quickblox
   module TestHelper
     module Credentials
       def config_file
-        Pathname.new(__dir__).join("assets/quickbox.yml")
+        Pathname.new(__dir__).join("assets/quickblox.yml")
       end
 
       def config_for(name)

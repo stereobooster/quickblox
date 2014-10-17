@@ -14,7 +14,6 @@ module Quickblox
         )
       end
 
-
     end
   end
 end

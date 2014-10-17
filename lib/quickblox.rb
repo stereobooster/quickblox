@@ -18,4 +18,11 @@ module Quickblox
     @config
   end
 
+  def logger=(logger)
+    @logger = logger
+  end
+
+  def logger
+    @logger
+  end
 end
