@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'yaml'
 require 'pathname'
+require 'ostruct'
 
 require_relative '../lib/quickblox'
 
@@ -13,12 +14,12 @@ module Quickblox
       end
 
       def config_for(name)
-        YAML.load(config_file.read)[name.to_s]
+        OpenStruct.new YAML.load(config_file.read)[name.to_s]
       end
     end
 
     def options
-      {
+      OpenStruct.new(
         application_id:       13,
         auth_key:             'abc123',
         auth_secret:          'secret',
@@ -26,7 +27,7 @@ module Quickblox
         user_owner_id:        1,
         user_owner_login:     'me',
         user_owner_password:  'pass',
-      }
+      )
     end
 
 

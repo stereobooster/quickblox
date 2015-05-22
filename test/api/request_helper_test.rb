@@ -18,17 +18,17 @@ module Quickblox
       end
 
       def options
-        {
+        OpenStruct.new(
           application_id:   13,
           auth_key:         'abc123',
           auth_secret:      'secret',
           server:           'someserver.com',
           user_owner_id:    1,
-        }
+        )
       end
 
       def test_parameter_building
-        built = ::Quickblox::Api::RequestHelper::ParameterBuilding.build!(build_params)
+        built = ::Quickblox::ParameterBuilding.build!(build_params)
         assert_equal 'dude',    built.fetch(:user).fetch(:login)
         assert_equal '123456',  built.fetch(:user).fetch(:password)
         assert_equal 1,         built.fetch(:user).fetch(:owner_id)

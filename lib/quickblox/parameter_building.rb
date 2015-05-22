@@ -1,4 +1,3 @@
-
 module Quickblox
   class ParameterBuilding
     attr_reader :parameters

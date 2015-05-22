@@ -17,9 +17,10 @@ module Quickblox
 
       def initialize
         @connect = ::Faraday.new(url: ::Quickblox.config.server) do |faraday|
-          faraday.request   ::Quickblox.config.request_type
-          faraday.response  ::Quickblox.config.logger
-          faraday.adapter   ::Quickblox.config.adapter
+          config = ::Quickblox.config
+          faraday.request   config.request_type if config.request_type
+          faraday.response  config.logger if config.logger
+          faraday.adapter   config.adapter if config.adapter
         end
       end
 

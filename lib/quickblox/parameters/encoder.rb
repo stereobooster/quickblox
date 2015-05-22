@@ -1,4 +1,3 @@
-
 module Quickblox
   module Parameters
     class Encoder

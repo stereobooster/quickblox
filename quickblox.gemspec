@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'quickblox/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "quickblox"
+  spec.name          = "quickblox-rails"
   spec.version       = Quickblox.version
   spec.author        = "Robert Evans"
   spec.email         = "robert@codewranglers.org"
   spec.summary       = %q{Quickblox Api}
   spec.description   = %q{Access the Quickblox Api within a Rails application}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/revans/quickblox"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

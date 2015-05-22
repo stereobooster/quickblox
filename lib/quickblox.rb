@@ -1,10 +1,10 @@
-require_relative "quickblox/version"
-require_relative "quickblox/config"
-require_relative "quickblox/railtie"
-require_relative "quickblox/parameter_building"
-require_relative "quickblox/signer"
-require_relative "quickblox/parameters"
-require_relative "quickblox/api"
+require_relative 'quickblox/version'
+require_relative 'quickblox/config'
+require_relative 'quickblox/railtie'
+require_relative 'quickblox/parameter_building'
+require_relative 'quickblox/signer'
+require_relative 'quickblox/parameters'
+require_relative 'quickblox/api'
 
 
 module Quickblox
@@ -14,15 +14,6 @@ module Quickblox
     @config = Config.setup( configuration )
   end
 
-  def config
-    @config
-  end
-
-  def logger=(logger)
-    @logger = logger
-  end
-
-  def logger
-    @logger
-  end
+  attr_accessor :config
+  attr_reader :logger
 end

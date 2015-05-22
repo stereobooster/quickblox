@@ -1,4 +1,3 @@
-
 module Quickblox
   module Api
     class Session
@@ -14,14 +13,14 @@ module Quickblox
 
       def self.close(token)
         Connection.connect.delete do |request|
-          request.url "/session.json"
+          request.url '/session.json'
           request.headers['QB-Token'] = token
         end
       end
 
       def close
         Connection.connect.delete do |request|
-          request.url "/session.json"
+          request.url '/session.json'
           request.headers['QB-Token'] = token
         end
       end

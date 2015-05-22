@@ -1,4 +1,3 @@
-
 require_relative 'gem_version'
 
 module Quickblox

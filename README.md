@@ -1,13 +1,13 @@
 # Quickblox
 
-TODO: Write a gem description
+Quickblox API for rails
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'quickblox'
+gem 'quickblox-rails'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install quickblox
+    $ gem install quickblox-rails
 
 ## Usage
 

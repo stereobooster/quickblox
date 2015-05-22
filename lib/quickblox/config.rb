@@ -1,5 +1,3 @@
-
-
 module Quickblox
   class Config
     attr_reader :application_id, :auth_key, :auth_secret, :server,

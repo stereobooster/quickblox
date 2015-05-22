@@ -33,7 +33,6 @@ module Quickblox
         response
       end
 
-
     end
   end
 end

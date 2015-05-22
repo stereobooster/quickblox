@@ -1,4 +1,3 @@
-
 module Quickblox
   module Api
     class Error
